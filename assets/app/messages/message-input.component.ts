@@ -35,13 +35,12 @@ export class MessageInputComponent implements OnInit{
                 result => console.log(result)
             );
             this.message = null;
-        }else{
+        }else{ 
             const message = new Message(form.value.content ,'ayush');
             this.messageService.addMessage(message)
                 .subscribe(
                     data    => console.log(data),
-                    error   => console.error(error)
-                    
+                    error   => console.error(error)  
                 );
         }
         form.resetForm();
